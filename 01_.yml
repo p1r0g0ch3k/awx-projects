@@ -1,7 +1,7 @@
 ---
 -
   name: Send IOS command
-  hosts: localhost
+  hosts: R1
   gather_facts: no
 
   tasks:
@@ -11,5 +11,5 @@
       src: './template.j2'
       dest: './res.cfg'
 
-    with_items:
-      - {hostname: r1}
+#    with_items:
+#      - {hostname: 'r1'}
