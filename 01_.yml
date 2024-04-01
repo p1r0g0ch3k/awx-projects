@@ -1,7 +1,15 @@
 ---
-- name: Hello World Sample
+-
+  name: Send IOS command
   hosts: localhost
+  gather_facts: no
+
   tasks:
-    - name: Hello Message
-      debug:
-        msg: "SOME TEXT"
+
+  - name: Send show commands
+    template:
+      src: './template.j2'
+      dest: './res.cfg'
+
+    with_items:
+      - {hostname: r1}
